@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<script type="text/javascript"
+        src="http://code.jquery.com/jquery-2.1.4.min.js">
+</script>
+<script>
+    $(document).ready(function() {
+        var formObj = $("#item");
+
+        $("#btnRegister").on("click", function() {
+            formObj.attr("action", "postItemRegister");
+            formObj.attr("method", "post");
+            formObj.submit();
+        });
+
+        $("#btnList").on("click", function() {
+            self.location = "itemlist";
+        });
+    });
+</script>
+<body>
+<h2>Register</h2>
+
+<!-- th:action="@" URL 링킹
+     th:object="$" 객체 링킹
+     th:field="*" 객체에 있는 내부 멤버 링킹 -->
+
+<form id="item" action="item/success.html"
+      th:action="@{register}"
+      th:object="${item}" method="post">
+    <table>
+        <tr>
+            <td>Id</td>
+            <td><input type="text" name="Id"
+                       th:field="*{Id}"/></td>
+            <td><font color="red">
+                <span th:if="${#fields.hasErrors('Id')}"
+                      th:errors="*{Id}">
+                        id Error Message
+                    </span>
+            </font></td>
+        </tr>
+        <tr>
+            <td>Pw</td>
+            <td><input type="text" name="Pw"
+                       th:field="*{Pw}"/></td>
+            <td><font color="red">
+                <span th:if="${#fields.hasErrors('Pw')}"
+                      th:errors="*{Pw}">
+                        pw Error Message
+                    </span>
+            </font></td>
+        </tr>
+        <tr>
+            <td>NickName</td>
+            <td><input type="text" name="NickName"
+                       th:field="*{NickName}"/></td>
+            <td><font color="red">
+                    <span th:if="${#fields.hasErrors('NickName')}"
+                          th:errors="*{NickName}">
+                        nickname Error Message
+                    </span>
+            </font></td>
+        </tr>
+        <tr>
+            <td>item</td>
+            <td><textarea name="Item"
+                          th:field="*{Item}"></textarea></td>
+            <td><font color="red">
+                    <span th:if="${#fields.hasErrors('Item')}"
+                          th:errors="*{Item}">
+                        item Error Message
+                    </span>
+            </font></td>
+        </tr>
+        <tr>
+            <td>Price</td>
+            <td><input type="text" name="Price"
+                       th:field="*{Price}"/></td>
+            <td><font color="red">
+                <span th:if="${#fields.hasErrors('Price')}"
+                      th:errors="*{Price}">
+                        price Error Message
+                    </span>
+            </font></td>
+        </tr>
+    </table>
+</form>
+
+<div>
+    <button type="submit" id="btnRegister">Register</button>
+    <button type="submit" id="btnList">List</button>
+</div>
+</body>
+</html>

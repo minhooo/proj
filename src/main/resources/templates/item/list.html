@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Item List</title>
+</head>
+<body>
+<h2>Item List</h2>
+<a href="Item/register.html" th:href="@{getItemRegister}">
+    Write New Item
+</a>
+<!-- HTML 주석-->
+<table border="1">
+    <tr>
+        <th align="center" width="80">Id</th>
+        <th align="center" width="80">Pw</th>
+        <th align="center" width="80">NickName</th>
+        <th align="center" width="80">Item</th>
+        <th align="center" width="80">Price</th>
+    </tr>
+    <tr th:if="${#lists.isEmpty(list)}">
+        <td colspan="7">
+            List is Empty
+        </td>
+    </tr>
+    <!-- foreach for(A : B)-->
+    <tr th:each="item:${list}">
+        <td align="center" th:text="${item.id}">
+            ${item.id}
+        </td>
+        <td align="center">
+            <a href="item/read.html"
+               th:href="@{|read?itemNo=${item.pw}|}"
+               th:text="${item.pw}">
+                ${item.pw}</a>
+        </td>
+        <td align="center" th:text="${item.nic
+
+
+        kname}">
+            ${item.nickname}
+        </td>
+        <td align="center" th:text="${item.item}">
+            ${board.item}
+        </td>
+        </td>
+        <td align="center" th:text="${item.price}">
+            ${board.price}
+        </td>
+    </tr>
+</table>
+</body>
+</html>
