@@ -1,6 +1,6 @@
 package com.example.demo.service;
 
-import com.example.demo.Repository.MemberRepository;
+import com.example.demo.repository.MemberRepository;
 import com.example.demo.entity.Member;
 import com.example.demo.entity.MemberAuth;
 

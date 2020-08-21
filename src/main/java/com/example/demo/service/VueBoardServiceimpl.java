@@ -1,6 +1,6 @@
 package com.example.demo.service;
 
-import com.example.demo.Repository.VueBoardRepository;
+import com.example.demo.repository.VueBoardRepository;
 import com.example.demo.entity.VueBoard;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

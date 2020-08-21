@@ -1,6 +1,6 @@
 package com.example.demo.security;
 
-import com.example.demo.Repository.MemberRepository;
+import com.example.demo.repository.MemberRepository;
 import com.example.demo.entity.Member;
 import lombok.extern.java.Log;
 import org.springframework.beans.factory.annotation.Autowired;

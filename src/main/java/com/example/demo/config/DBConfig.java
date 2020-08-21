@@ -19,8 +19,8 @@ public class DBConfig {
         dataSource.setUrl(
                 "jdbc:mysql://localhost:3306/testdb?serverTimezone=UTC&useSSL=false"
         );
-        dataSource.setUsername("bitai");
-        dataSource.setPassword("456123");
+        dataSource.setUsername("root");
+        dataSource.setPassword("Dlalsgh!32");
         return dataSource;
     }
 }

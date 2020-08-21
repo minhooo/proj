@@ -5,8 +5,8 @@ server:
 spring:
   datasource:
     url: jdbc:mysql://localhost:3306/testdb?serverTimezone=UTC&useSSL=false
-    username: bitai
-    password: 456123
+    username: root
+    password: Dlalsgh!32
     driver-class-name: com.mysql.cj.jdbc.Driver
 
   jpa:

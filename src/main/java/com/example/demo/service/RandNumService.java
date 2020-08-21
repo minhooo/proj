@@ -1,6 +1,6 @@
 package com.example.demo.service;
 
-import com.example.demo.Repository.RandNumRepository;
+import com.example.demo.repository.RandNumRepository;
 import com.example.demo.entity.RandNumMessage;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
